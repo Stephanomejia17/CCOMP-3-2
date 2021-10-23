@@ -16,132 +16,127 @@ bool encontrado=false;
 
 int main(){
   char* ptr_w=word;
-  char** ptr= new char*[13];
+  char* text[12];
+  char** ptr=text;
+
+
 
   for(int i=0;i<12;i++){
-    *(ptr+i)= new char[13];
+    *(text+i)= *(sopa+i);
   }
-  for(int i=0;i<13;i++){
-    for(int j=0;j<13;j++){
-      *(*(ptr+i)+j)= *(*(sopa+i)+j);
-    }
-  }
-  for(int h=0;h<13;h++){
-    for(int j=0;j<13;j++){
-      int cont(0);
+  char* move(*ptr);
+
+
+
+
+  for(int h=0;h<12;h++){
+    for(int j=0;j<12;j++){
       int i=0;
       //oeste
       if(j-len(word)>=-1){
         for(i=0;i<len(word);i++){
-          if(**ptr!=*ptr_w){
+          if(*move!=*ptr_w){
             break;   
           }
-          cont++;
-          (*ptr)--;
+          move--;
           ptr_w++;
         }
-        *ptr-=i;
+        move+=i;
         ptr_w-=i;
       }
       //noroeste
       if(j-len(word)>=-1 && h-len(word)>=-1){
         for(i=0;i<len(word);i++){
-          if(**ptr!=*ptr_w){
+          if(*move!=*ptr_w){
             break;   
           }
-          cont++;
-          (*ptr)++;
+          move-=14;
           ptr_w++;
         }
-        *ptr-=i;
+        move+=i*14;
         ptr_w-=i;
       }
       //norte
       if(h-len(word)>=-1){
         for(i=0;i<len(word);i++){
-          if(**ptr!=*ptr_w){
+          if(*move!=*ptr_w){
             break;   
           }
-          cont++;
-          (*ptr)++;
+          move-=13;
           ptr_w++;
         }
-        *ptr-=i;
+        move+=i*13;
         ptr_w-=i;
       }
       //noreste
       if(h-len(word)>=-1 && j+len(word)<=12){
         for(i=0;i<len(word);i++){
-          if(**ptr!=*ptr_w){
+          if(*move!=*ptr_w){
             break;   
           }
-          cont++;
-          (*ptr)++;
+          move-=12;
           ptr_w++;
         }
-        *ptr-=i;
+        move-=i*12;
         ptr_w-=i;
       }
       //este
       if(j+len(word)<=12){
         for(i=0;i<len(word);i++){
-          if(**ptr!=*ptr_w){
+          if(*move!=*ptr_w){
             break;   
           }
-          cont++;
-          (*ptr)++;
+          move++;
           ptr_w++;
         }
-        *ptr-=i;
+        move-=i;;
         ptr_w-=i;
       }
       //sureste
       if(h+len(word)<=12 && j+len(word)<=12){
         for(i=0;i<len(word);i++){
-          if(**ptr!=*ptr_w){
+          if(*move!=*ptr_w){
             break;   
           }
-          cont++;
-          (*ptr)++;
+          move+=14;
           ptr_w++;
         }
-        *ptr-=i;
+        move-=i*14;
         ptr_w-=i;
       }
       //sur
       if(h+len(word)<=12){
         for(i=0;i<len(word);i++){
-          if(**ptr!=*ptr_w){
+          if(*move!=*ptr_w){
             break;   
           }
-          cont++;
-          (*ptr)++;
+          move+=13;
           ptr_w++;
         }
-        *ptr-=i;
+        move-=i*13;
         ptr_w-=i;
       }
       //suroeste
       if(h+len(word)<=12 && j-len(word)>=-1){
         for(i=0;i<len(word);i++){
-          if(**ptr!=*ptr_w){
+          if(*move!=*ptr_w){
             break;   
           }
-          cont++;
-          (*ptr)++;
+          move+=12;
           ptr_w++;
         }
-        *ptr-=i;
+        move-=i*12;
         ptr_w-=i;
       }
-      (*ptr)++;
-      if (cont==len(word)){
+      
+      if (i==len(word)-1){
         encontrado=true;
         cout<<"x = "<<h;
         cout<<endl<<"y = "<<j<<endl;
       }
+      move += 1;
     }
-    ptr+=1;
+    move += 1;
 
   }
 
@@ -150,11 +145,31 @@ int main(){
     cout<<"x=  -1 ,y= -1";
   }
 
-for(int i=0;i<13;i++){
-    delete ptr[i];
-  }
-  delete[] ptr;
 
 
   return 0;
 }
+/*#include <iostream>
+using namespace std; 
+
+int main(){
+    int cont = 0;
+    char Sopa[5][5]=
+    {
+    {'a' , 'b' , 'c' , 'd' , 'e'} ,
+    {'f' , 'g' , 'h' , 'i' , 'j'} ,
+    {'1' , '2' , '3' , '4' , '5'} ,
+    {'6' , '7' , '8' , '9' , '0'} ,
+    {'1' , '2' , '3' , '4' , '5'}
+    };
+
+    char (*ptrSopa)[5] = Sopa;
+
+    while(*(*ptrSopa+cont) != '\0'){
+        cout << *(*ptrSopa+cont) << " ";
+
+
+        cont++;
+    }
+
+}*/
