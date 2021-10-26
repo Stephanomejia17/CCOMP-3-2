@@ -10,7 +10,8 @@ int main(){
         cout << "Ingrese el primer numero: "; cin >> a;
         cout << "ingrese el segundo numero: "; cin >> b;
 
-        cout << a << " mod " << b << " = " << a%b;
+        //cout << a << " mod " << b << " = " << a%b;
+        cout << a << " = " << a%b << " (mod " << b << ") ";
         c++;
     }
     
