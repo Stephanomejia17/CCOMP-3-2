@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
-//Buenas profesoor, en este codigo que implemente he intentado seguir todo tal cual lo puso en la actividad, mis funciones unicamente reciben un puntero a mi array, y una dimension, solo recibe una dimension porque recuerdo que en la anterior clase indico que los arrays debian ser "cuadrados", entonces al ser cuadrados, unicamente me hace falta tener una de sus dimensiones, asi es mas simple tambien para poder poner todas mis funciones en un solo array, y tambien para poder tener una forma "universal" de mis funciones.
+/*Buenas profesoor, en este codigo que implemente he intentado seguir todo tal cual lo puso en la actividad, mis funciones unicamente
+ reciben un puntero a mi array, y una dimension, solo recibe una dimension porque recuerdo que en la anterior clase indico que los 
+ arrays debian ser "cuadrados", entonces al ser cuadrados, unicamente me hace falta tener una de sus dimensiones, asi es mas simple 
+ tambien para poder poner todas mis funciones en un solo array, y tambien para poder tener una forma "universal" de mis funciones.*/
 
 //Esta es mi Suma Mediana para arrays 1D
 int suma_mediana_1D( int* vector, int dim1 ){
