@@ -20,19 +20,20 @@ void imprimir(int *ini, int *fin)
 }
 
 void calcular1(int (*pf)(int*,int*),int* a) {
-  /*To Complete*/
+  *a = pf(a-1,a-2);
 }
 
 void calcular2(int (*pf)(int*,int*),int* a) {
-  /*To Complete*/
+  *a = pf(a-1,a+1);
 }
 
 int main() {
     int (*pf1[2])(int*,int*) = {suma,multiplicacion};
     void (*pf2[2])(int (*pf)(int*,int*),int*) = {calcular1,calcular2};
 
-    int (*ppff1)(int(*a[2])(int*,int*)) = pf1;
-    void (*ppff2) = pf2;
+    //Punteros de punteros a funciones
+    int (*(*ppff1))(int*,int*) = pf1;
+    void (*(*ppff2))(int (*)(int*,int*),int*) = pf2;
       
     int num[9]= {2,5,3,1,0,6,1,3,7};
     int op1[9]= {0,0,1,0,0,0,0,1,0};

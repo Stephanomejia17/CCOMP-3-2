@@ -4,9 +4,8 @@ using namespace std;
 
 void Eliminar(char* texto,char* q)
 {
-  while(*q){
-    *q = *(q+1);
-    q++;
+  for(char* r=q;*r;r++){
+    *r = *(r+1);
   }
 }
 

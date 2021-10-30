@@ -42,7 +42,7 @@
         "streambuf": "cpp",
         "typeinfo": "cpp"
     },
-    "C_Cpp.errorSquiggles": "Disabled",
+    "C_Cpp.errorSquiggles": "Enabled",
     "terminal.integrated.cursorStyle": "line",
     "c-cpp-flylint.pclintplus.enable": true,
     "linter.debug": true,
